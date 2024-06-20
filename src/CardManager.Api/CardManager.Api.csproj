@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>02cba8df-7d12-40ed-a9e2-3913216af30c</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..\..</DockerfileContext>
+    <RootNamespace>Vostok.HotLineAssistant.CardManager.Api</RootNamespace>
+    <AssemblyName>HotLineAssistant.CardManager.Api</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ApiExplorer" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="4.1.1" />
+    <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BuildingBlocks\HotLineAssistant.Application\Application.csproj" />
+    <ProjectReference Include="..\BuildingBlocks\HotLineAssistant.WebApi\WebApi.csproj" />
+    <ProjectReference Include="..\Services\CardManager\CardManager.Application\CardManager.Application.csproj" />
+    <ProjectReference Include="..\Services\CardManager\CardManager.Infrastructure\CardManager.Infrastructure.csproj" />
+  </ItemGroup>
+
+
+</Project>

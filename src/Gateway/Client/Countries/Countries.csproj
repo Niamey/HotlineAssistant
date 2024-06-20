@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Hotline.Gateway.Client.Countries</AssemblyName>
+    <RootNamespace>Vostok.Hotline.Gateway.Client.Countries</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Core.Common\Core.Common.csproj" />
+    <ProjectReference Include="..\..\..\Data\Data.Repository.References\Data.Repository.References.csproj" />
+  </ItemGroup>
+
+</Project>

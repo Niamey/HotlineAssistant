@@ -1,0 +1,17 @@
+{
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "files.autoSaveDelay": 5000,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.tabSize": 2,
+    "typescript.preferences.quoteStyle": "single",
+    "javascript.preferences.quoteStyle": "single",
+    "javascript.format.insertSpaceAfterConstructor": true,
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "javascript.format.semicolons": "insert",
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "eslint.format.enable": true,
+    "[vue]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+}

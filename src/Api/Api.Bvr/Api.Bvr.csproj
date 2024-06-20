@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Vostok.Hotline.Api.Bvr</RootNamespace>
+    <AssemblyName>Hotline.Api.Bvr</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core.Common\Core.Common.csproj" />
+    <ProjectReference Include="..\..\Data\Data.Repository.Core\Data.Repository.Core.csproj" />
+    <ProjectReference Include="..\Api.Base\Api.Base.csproj" />
+  </ItemGroup>
+
+</Project>

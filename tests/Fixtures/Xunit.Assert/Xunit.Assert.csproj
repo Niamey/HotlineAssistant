@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>Xunit</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>HotLineAssistant.Xunit.Assert</AssemblyName>
+  </PropertyGroup>
+
+	<ItemGroup>
+    <Compile Include="Assert.cs" />
+    <Compile Include="Injection\AssertConstructor.cs" />
+    <Compile Include="Injection\AssertFactory.cs" />
+    <Compile Include="Injection\AssertProperty.cs" />
+    <Compile Include="Internal\MoqFactory.cs" />
+    <Compile Include="MediatR\AssertRequestHandler.cs" />
+    <Compile Include="MediatR\Mvc\ActionInvoker.cs" />
+    <Compile Include="MediatR\Mvc\AssertActionBase.cs" />
+    <Compile Include="MediatR\Mvc\AssertActionCommand.cs" />
+    <Compile Include="MediatR\Mvc\AssertActionMethod.cs" />
+    <Compile Include="MediatR\Mvc\AssertActionQuery.cs" />
+    <Compile Include="MediatR\Mvc\AssertQueryAction.cs" />
+    <Compile Include="Mvc\AssertActionResult.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoFixture" Version="4.14.0" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Moq" Version="4.14.7" />
+    <PackageReference Include="Moq.Sequences" Version="2.2.1" />
+    <PackageReference Include="xunit.assert.source" Version="2.4.1">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+	</PackageReference>
+  </ItemGroup>
+
+</Project>

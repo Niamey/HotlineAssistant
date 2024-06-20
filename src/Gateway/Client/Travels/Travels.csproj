@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Hotline.Gateway.Client.Travels</AssemblyName>
+    <RootNamespace>Vostok.Hotline.Gateway.Client.Travels</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Api\Api.Retail\Api.Retail.csproj" />
+    <ProjectReference Include="..\..\..\Core\Core.Common\Core.Common.csproj" />
+    <ProjectReference Include="..\..\..\Data\Data.Repository.Core\Data.Repository.Core.csproj" />
+    <ProjectReference Include="..\..\..\Data\Data.Repository.References\Data.Repository.References.csproj" />
+  </ItemGroup>
+
+</Project>

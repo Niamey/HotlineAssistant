@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "OcelotApiGw": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Hotline.Gateway.Client.Classifiers</AssemblyName>
+    <RootNamespace>Vostok.Hotline.Gateway.Client.Classifiers</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Api\Api.Retail\Api.Retail.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Solar.Models" Version="1.0.9" />
+    <PackageReference Include="Solar.SDK" Version="1.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\HotLineAssistant.Common\Common.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\HotLineAssistant.Domain\Domain.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\HotlineAssistant.SolarCore\SolarCore.csproj" />
+  </ItemGroup>
+
+</Project>

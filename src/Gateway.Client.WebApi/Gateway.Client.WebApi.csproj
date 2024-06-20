@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <AssemblyName>Hotline.Gateway.Client.WebApi</AssemblyName>
+	  <RootNamespace>Vostok.Hotline.Gateway.Client.WebApi</RootNamespace>
+	  <UserSecretsId>b6ae3b3e-431f-4f93-ad22-a5f8d773145c</UserSecretsId>
+	  <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	  <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\Core\Core.Common\Loggers\Config\web-nlog.config" Link="web-nlog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.3.0" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="6.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Api\Api.Base\Api.Base.csproj" />
+    <ProjectReference Include="..\Api\Api.Bvr\Api.Bvr.csproj" />
+    <ProjectReference Include="..\Api\Api.CRM\Api.CRM.csproj" />
+    <ProjectReference Include="..\Api\Api.References\Api.References.csproj" />
+    <ProjectReference Include="..\Api\Api.Retail\Api.Retail.csproj" />
+    <ProjectReference Include="..\Api\Api.Services\Api.Services.csproj" />
+    <ProjectReference Include="..\Authorization\Authorization\Authorization.csproj" />
+    <ProjectReference Include="..\Core\Core.Common.Swagger.Authorize.Razore\Core.Common.Swagger.Authorize.Razore.csproj" />
+    <ProjectReference Include="..\Core\Core.Common\Core.Common.csproj" />
+    <ProjectReference Include="..\Core\Core.Documents\Core.Documents.csproj" />
+    <ProjectReference Include="..\Gateway\Client\Accounts\Accounts.csproj" />
+    <ProjectReference Include="..\Gateway\Client\Agreements\Agreements.csproj" />
+    <ProjectReference Include="..\Gateway\Client\Cards\Cards.csproj" />
+    <ProjectReference Include="..\Gateway\Client\Classifiers\Classifiers.csproj" />
+    <ProjectReference Include="..\Gateway\Client\Counterpart\Counterpart\Counterpart.csproj" />
+    <ProjectReference Include="..\Gateway\Client\Statements\Statements.csproj" />
+    <ProjectReference Include="..\Gateway\Client\Countries\Countries.csproj" />
+    <ProjectReference Include="..\Gateway\Client\Transactions\Transactions.csproj" />
+    <ProjectReference Include="..\Gateway\Client\Travels\Travels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\swagger-ui\custom.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\swagger-ui\favicon-16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\swagger-ui\favicon-32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\swagger-ui\Development.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

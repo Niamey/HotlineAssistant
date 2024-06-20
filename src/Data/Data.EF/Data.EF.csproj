@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<RootNamespace>Vostok.Hotline.Data.EF</RootNamespace>
+		<AssemblyName>Hotline.Data.EF</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Migrations\20210601140212_AddTravelEntities.cs" />
+	  <Compile Remove="Migrations\20210601140212_AddTravelEntities.Designer.cs" />
+	  <Compile Remove="Migrations\20210602095325_AddTravelEntities.cs" />
+	  <Compile Remove="Migrations\20210602095325_AddTravelEntities.Designer.cs" />
+	  <Compile Remove="Migrations\20210611071134_AddTravelEntities.cs" />
+	  <Compile Remove="Migrations\20210611071134_AddTravelEntities.Designer.cs" />
+	  <Compile Remove="Migrations\20210611072322_AddTravelEntities.cs" />
+	  <Compile Remove="Migrations\20210611072322_AddTravelEntities.Designer.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.8" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.8" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.8" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.8" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\Core\Core.Common\Core.Common.csproj" />
+		<ProjectReference Include="..\..\Core\Core.Data\Core.Data.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Sql\References\" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>HotLineAssistant.AgreementManager.Application</AssemblyName>
+    <RootNamespace>Vostok.HotLineAssistant.AgreementManager.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="9.2.2" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="Solar.Models" Version="1.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\HotLineAssistant.Application\Application.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\HotLineAssistant.Common\Common.csproj" />
+  </ItemGroup>
+
+</Project>

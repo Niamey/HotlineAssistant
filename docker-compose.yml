@@ -1,0 +1,34 @@
+version: '3.4'
+
+services:
+
+#  api-gateway-aggregator:
+#    image: ${DOCKER_REGISTRY}/api_gateway_aggregator
+#    build:
+#      context: .
+#      dockerfile: src/ApiGateways/HotLineAssistant.Web/HotLineAssistant.HttpAggregator/Dockerfile
+#    depends_on:
+#    - sql-data
+#    - clients-api
+#    - cards-api
+#    - agreements-api
+#    - accessors-api
+#    - identity-api
+
+  gateway-client-webapi:
+    image: ${DOCKER_REGISTRY:-hotline}/${NAMESPACE:-vostok}/${PROJECT:-hotlineassistant}.${CONTAINER:-gateway.client.webapi}:${VERSION:-latest}
+    build:
+      context: .
+      dockerfile: src/Gateway.Client.WebApi/Dockerfile
+
+  storefront-webapi:
+    image: ${DOCKER_REGISTRY:-hotline}/${NAMESPACE:-vostok}/${PROJECT:-hotlineassistant}.${CONTAINER:-storefront.webapi}:${VERSION:-latest}
+    build:
+      context: .
+      dockerfile: src/Storefront.WebApi/Dockerfile
+
+  gateway-vicidial-webapi:
+    image: ${DOCKER_REGISTRY:-hotline}/${NAMESPACE:-vostok}/${PROJECT:-hotlineassistant}.${CONTAINER:-gateway.vicidial.webapi}:${VERSION:-latest}
+    build:
+      context: .
+      dockerfile: src/Gateway.Vicidial.WebApi/Dockerfile

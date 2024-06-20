@@ -1,0 +1,177 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/{version}/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "agreements-api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/{version}/ag/{everything}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/{version}/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "accessors-api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/{version}/acc/{everything}",
+      "UpstreamHttpMethod": [],
+      "AuthenticationOptions": {
+//        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/{version}/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cards-api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/{version}/crd/{everything}",
+      "UpstreamHttpMethod": [],
+      "AuthenticationOptions": {
+//        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/{version}/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "clients-api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/{version}/cli/{everything}",
+      "UpstreamHttpMethod": [],
+      "AuthenticationOptions": {
+//        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "hotlineagg",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/{everything}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ],
+      "AuthenticationOptions": {
+//        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "agreements-api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/agreements/{url}",
+      "UpstreamHttpMethod": [],
+      "AuthenticationOptions": {
+//        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": [
+          "HotLineAssistant.AgreementManager"
+        ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "accessors-api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/accessors/{url}",
+      "UpstreamHttpMethod": [],
+      "AuthenticationOptions": {
+        //        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": [
+          "HotLineAssistant.AccessorManager"
+        ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "clients-api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/client/{url}",
+      "UpstreamHttpMethod": [],
+      "AuthenticationOptions": {
+        //        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": [
+          "HotLineAssistant.ContactManager"
+        ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cards-api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/cards/{url}",
+      "UpstreamHttpMethod": [],
+      "AuthenticationOptions": {
+        //        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": [
+          "HotLineAssistant.CardManager"
+        ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "hotlineapigw",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/{url}",
+      "UpstreamHttpMethod": [],
+      "AuthenticationOptions": {
+        //        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": [
+          "HotLineAssistant.HttpAggregator",
+          "HotLineAssistant.ContactManager",
+          "HotLineAssistant.AccessorManager",
+          "HotLineAssistant.AgreementManager",
+          "HotLineAssistant.CardManager"
+        ]
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "RequestIdKey": "OcRequestId"
+  } 
+}

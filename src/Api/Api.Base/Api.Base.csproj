@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <AssemblyName>Hotline.Api.Base</AssemblyName>
+	  <RootNamespace>Vostok.Hotline.Api.Base</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Vostok.HttpClient" Version="1.0.9" />
+    <PackageReference Include="Vostok.HttpClient.NetCore" Version="1.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core.Common\Core.Common.csproj" />
+  </ItemGroup>
+
+</Project>

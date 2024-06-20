@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<RootNamespace>Vostok.Hotline.Data.Repository.Core</RootNamespace>
+		<AssemblyName>Hotline.Data.Repository.Core</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Authorization\Authorization.ViewModels\Authorization.ViewModels.csproj" />
+	  <ProjectReference Include="..\Data.EF\Data.EF.csproj" />
+	  <ProjectReference Include="..\Data.Repository\Data.Repository.csproj" />
+	</ItemGroup>
+
+</Project>

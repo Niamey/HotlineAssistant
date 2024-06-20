@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>HotLineAgreement.AgreementManager.Infrastructure</AssemblyName>
+    <RootNamespace>Vostok.HotLineAssistant.AgreementManager.Infrastructure</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="Solar.Models" Version="1.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\HotLineAssistant.Common\Common.csproj" />
+    <ProjectReference Include="..\AgreementManager.Application\AgreementManager.Application.csproj" />
+    <ProjectReference Include="..\AgreementManager.Domain\AgreementManager.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

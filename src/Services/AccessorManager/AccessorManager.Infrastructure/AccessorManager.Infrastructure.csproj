@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>HotLineAssistant.AccessorManager.Infrastructure</AssemblyName>
+    <RootNamespace>Vostok.HotLineAssistant.AccessorManager.Infrastructure</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="Solar.Models" Version="1.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\HotLineAssistant.Common\Common.csproj" />
+    <ProjectReference Include="..\AccessorManager.Application\AccessorManager.Application.csproj" />
+    <ProjectReference Include="..\AccessorManager.Domain\AccessorManager.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<AssemblyName>Hotline.Storefront</AssemblyName>
+		<RootNamespace>Vostok.Hotline.Storefront</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="FluentValidation" Version="9.3.0" />
+	  <PackageReference Include="MediatR" Version="9.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Api\Api.Services\Api.Services.csproj" />
+	  <ProjectReference Include="..\Core\Core.Common\Core.Common.csproj" />
+	  <ProjectReference Include="..\Core\Core.Documents\Core.Documents.csproj" />
+	  <ProjectReference Include="..\Data\Data.Repository.Core\Data.Repository.Core.csproj" />
+	  <ProjectReference Include="..\Documents\Vostok.Hotline.Document.Templates\Document.Templates.csproj" />
+	</ItemGroup>
+
+</Project>

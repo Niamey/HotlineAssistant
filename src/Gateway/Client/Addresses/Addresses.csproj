@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Hotline.Gateway.Client.Addresses</AssemblyName>
+    <RootNamespace>Vostok.Hotline.Gateway.Client.Addresses</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Bootstrappers\CountryBootstraperExtension.cs" />
+    <Compile Remove="Managers\CountryManager.cs" />
+    <Compile Remove="Mapper\CountryMapperExtensions.cs" />
+    <Compile Remove="Requests\Handlers\CountryDetailQueryHandler.cs" />
+    <Compile Remove="Requests\Queries\CountryDetailQuery.cs" />
+    <Compile Remove="Services\CountryService.cs" />
+    <Compile Remove="Services\Models\Responses\CountryResponseModel.cs" />
+    <Compile Remove="Services\SearchRequests\CountryDetailRequest.cs" />
+    <Compile Remove="ViewModels\CountryViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="FluentValidation" Version="9.3.0" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Core.Common\Core.Common.csproj" />
+  </ItemGroup>
+
+</Project>

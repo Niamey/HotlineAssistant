@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <DockerfileContext>..\..\..\..</DockerfileContext>
+        <RootNamespace>Vostok.HotLineAssistant.OcelotApiGw</RootNamespace>
+        <AssemblyName>HotLineAssistant.OcelotApiGw</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.1.2" />
+      <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="3.1.2" />
+      <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.9" />
+      <PackageReference Include="Microsoft.AspNetCore.Diagnostics.HealthChecks" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.HealthChecks" Version="1.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.9" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.9" />
+      <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+      <PackageReference Include="Ocelot" Version="16.0.1" />
+      <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+      <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+      <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+    </ItemGroup>
+
+</Project>

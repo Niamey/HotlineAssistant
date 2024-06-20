@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>Vostok.HotLineAssistant.Common</RootNamespace>
+        <AssemblyName>HotLineAssistant.Common</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Builders\**" />
+      <Compile Remove="Converters\**" />
+      <Compile Remove="Json\**" />
+      <Compile Remove="Providers\**" />
+      <EmbeddedResource Remove="Builders\**" />
+      <EmbeddedResource Remove="Converters\**" />
+      <EmbeddedResource Remove="Json\**" />
+      <EmbeddedResource Remove="Providers\**" />
+      <None Remove="Builders\**" />
+      <None Remove="Converters\**" />
+      <None Remove="Json\**" />
+      <None Remove="Providers\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="10.1.1" />
+      <PackageReference Include="MediatR" Version="9.0.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    </ItemGroup>
+
+</Project>

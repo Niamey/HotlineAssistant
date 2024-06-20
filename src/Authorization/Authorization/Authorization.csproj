@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<AssemblyName>Hotline.Authorization</AssemblyName>
+		<RootNamespace>Vostok.Hotline.Authorization</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="9.3.0" />
+		<PackageReference Include="MediatR" Version="9.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.11" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.8.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Core\Core.Common\Core.Common.csproj" />
+	  <ProjectReference Include="..\..\Data\Data.Repository.Core\Data.Repository.Core.csproj" />
+	  <ProjectReference Include="..\Authorization.ViewModels\Authorization.ViewModels.csproj" />
+	</ItemGroup>
+
+
+</Project>

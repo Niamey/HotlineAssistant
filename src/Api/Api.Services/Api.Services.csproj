@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Vostok.Hotline.Api.Services</RootNamespace>
+    <AssemblyName>Hotline.Api.Services</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="2.10.1" />
+    <PackageReference Include="NETCore.MailKit" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core.Common\Core.Common.csproj" />
+    <ProjectReference Include="..\..\Data\Data.Repository.Core\Data.Repository.Core.csproj" />
+    <ProjectReference Include="..\Api.Base\Api.Base.csproj" />
+  </ItemGroup>
+
+</Project>

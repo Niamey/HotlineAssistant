@@ -1,0 +1,35 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:54287/",
+      "sslPort": 44347
+    }
+  },
+  "profiles": {
+    "Vostok.Hotline.Gateway.Vicidial.WebApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "HOTLINE.ENVIRONMENT": "Development",
+        "Authorization.JWT.Key": "10c71fedad6861bc88be9bb0705a1f43f6aab258",
+        "ConnectionStrings.HotlineContext": "Server=SBDP-CENTER-X06.BANK.LAN;Database=HotlineAssistance;User ID=j-hotlineassistan;",
+        "ConnectionStrings.HotlineContext.Password": "LlI2LRBREubpvcn3GWJ8",
+        "Logger.Database.ConnectionString": "data source=SBDP-CENTER-X06.BANK.LAN;initial catalog=HotlineAssistant;User ID=j-hotlineassistan;",
+        "Logger.Database.ConnectionString.Password": "LlI2LRBREubpvcn3GWJ8",
+        "Logger.Database.Level": "Trace",
+        "Logger.RabbitMq.Disable": "true",
+        "Logger.Email.Disable": "true"
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5903"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "publishAllPorts": true,
+      "useSSL": true
+    }
+  }
+}

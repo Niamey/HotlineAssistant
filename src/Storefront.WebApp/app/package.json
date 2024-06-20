@@ -1,0 +1,64 @@
+{
+  "name": "hotlineassistant",
+  "version": "0.9.1",
+  "description": "HotLine Assistant",
+  "productName": "HotLineAssistant",
+  "cordovaId": "org.cordova.quasar.app",
+  "capacitorId": "",
+  "private": true,
+  "scripts": {
+    "dev": "quasar dev --history",
+    "build:dev": "quasar build --development",
+    "build:prod": "quasar build --production",
+    "lint": "eslint --ext .ts,.vue src",
+    "test:dev": "quasar test --unit jest --dev=\"-m spa\"",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.9.6",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "dotenv": "^8.2.0",
+    "idle-vue": "2.0.5",
+    "quasar": "^1.14.0",
+    "v-money": "0.8.1",
+    "vue-bus": "^1.2.1",
+    "vue-i18n": "^8.21.1",
+    "vue-mixin-decorator": "^1.2.0",
+    "vue-pdf": "4.2.0",
+    "vue-tel-input": "^4.4.2",
+    "vuex": "^3.1.3",
+    "vuex-class-modules": "^1.1.2",
+    "vuex-smart-module": "^0.4.6"
+  },
+  "devDependencies": {
+    "@quasar/app": "^2.0.0",
+    "@quasar/quasar-app-extension-dotenv": "^1.0.1",
+    "@quasar/quasar-app-extension-testing": "^1.0.0",
+    "@quasar/quasar-app-extension-testing-unit-jest": "^2.2.1",
+    "@types/node": "^10.17.15",
+    "@types/vue-tel-input": "^2.1.2",
+    "@typescript-eslint/eslint-plugin": "^3.3.0",
+    "@typescript-eslint/parser": "^3.3.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.1.2",
+    "vue-class-component": "^7.2.6",
+    "vue-property-decorator": "^8.4.0",
+    "vuex-module-decorators": "^1.0.1"
+  },
+  "browserslist": [
+    "last 10 Chrome versions"
+  ],
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}

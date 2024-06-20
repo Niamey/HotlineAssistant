@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+		<AssemblyName>Hotline.Core.Common.Swagger.Authorize.Razore</AssemblyName>
+		<RootNamespace>Vostok.Hotline.Core.Common.Swagger.Authorize.Razore</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Authorization\Authorization\Authorization.csproj" />
+	  <ProjectReference Include="..\Core.Common\Core.Common.csproj" />
+	</ItemGroup>
+
+</Project>

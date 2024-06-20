@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <AssemblyName>Hotline.Api.Retail</AssemblyName>
+	  <RootNamespace>Vostok.Hotline.Api.Retail</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core.Common\Core.Common.csproj" />
+    <ProjectReference Include="..\..\Core\Core.Documents\Core.Documents.csproj" />
+    <ProjectReference Include="..\..\Data\Data.Repository.Core\Data.Repository.Core.csproj" />
+    <ProjectReference Include="..\..\Documents\Vostok.Hotline.Document.Templates\Document.Templates.csproj" />
+    <ProjectReference Include="..\Api.Bvr\Api.Bvr.csproj" />
+    <ProjectReference Include="..\Api.References\Api.References.csproj" />
+    <ProjectReference Include="..\Api.Base\Api.Base.csproj" />
+    <ProjectReference Include="..\Api.Services\Api.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Files\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Files\tarif-BVR.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

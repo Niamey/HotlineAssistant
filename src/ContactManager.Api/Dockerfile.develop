@@ -1,0 +1,22 @@
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster
+ARG BUILD_CONFIGURATION=Debug
+ENV ASPNETCORE_ENVIRONMENT=Development
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+WORKDIR /src
+COPY ["src/ContactManager.Api/ContactManager.Api.csproj", "src/ContactManager.Api/"]
+COPY ["src/BuildingBlocks/HotLineAssistant.WebApi/WebApi.csproj", "src/BuildingBlocks/HotLineAssistant.WebApi/"]
+COPY ["src/BuildingBlocks/HotLineAssistant.Domain/Domain.csproj", "src/BuildingBlocks/HotLineAssistant.Domain/"]
+COPY ["src/BuildingBlocks/HotLineAssistant.Application/Application.csproj", "src/BuildingBlocks/HotLineAssistant.Application/"]
+COPY ["src/Services/ContactManager/ContactManager.Application/ContactManager.Application.csproj", "src/Services/ContactManager/ContactManager.Application/"]
+COPY ["src/Services/ContactManager/ContactManager.Domain/ContactManager.Domain.csproj", "src/Services/ContactManager/ContactManager.Domain/"]
+COPY ["src/Services/ContactManager/ContactManager.Infrastructure/ContactManager.Infrastructure.csproj", "src/Services/ContactManager/ContactManager.Infrastructure/"]
+RUN dotnet restore src/ContactManager.Api/ContactManager.Api.csproj
+
+COPY . .
+WORKDIR /src/src/Services/ContactManager/ContactManager.Api
+RUN dotnet build --no-restore -c $BUILD_CONFIGURATION
+
+ENTRYPOINT ["dotnet", "run", "--no-launch-profile", "-c", "$BUILD_CONFIGURATION", "--"]

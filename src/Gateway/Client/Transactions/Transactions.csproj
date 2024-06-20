@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Hotline.Gateway.Client.Transactions</AssemblyName>
+    <RootNamespace>Vostok.Hotline.Gateway.Client.Transactions</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="FluentValidation" Version="9.3.0" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Api\Api.References\Api.References.csproj" />
+    <ProjectReference Include="..\..\..\Api\Api.Retail\Api.Retail.csproj" />
+    <ProjectReference Include="..\..\..\Core\Core.Common\Core.Common.csproj" />
+    <ProjectReference Include="..\..\..\Data\Data.Repository.References\Data.Repository.References.csproj" />
+    <ProjectReference Include="..\..\..\Data\Data.Repository.Solar\Data.Repository.Solar.csproj" />
+  </ItemGroup>
+
+</Project>

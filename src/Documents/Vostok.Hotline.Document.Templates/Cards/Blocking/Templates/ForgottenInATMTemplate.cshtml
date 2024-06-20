@@ -1,0 +1,79 @@
+﻿@{
+    string question = "Запит";
+    string answer = "Відповідь";
+}
+
+@model Vostok.Hotline.Document.Templates.Cards.Blocking.Models.CardBlockingModel<Vostok.Hotline.Document.Templates.Cards.Blocking.Models.ForgottenInATMModel>
+@using Vostok.Hotline.Core.Documents.Helpers;
+@using Vostok.Hotline.Document.Templates.Cards.Blocking.ConstantNames;
+
+<tr style="border-collapse:collapse">
+    <td align="center" class="es-m-p20tb" style="padding:20px;Margin:0">
+        <!-- Пример блока с текстом -->
+        <table bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" width="100%">
+            <tr style="border-collapse:collapse">
+                <td>
+                    <table width="100%" cellpadding="0" cellspacing="0" style="min-width:100%;">
+                        <thead>
+                            <tr>
+                                <th scope="col" align="left" style="padding:10px; font-family: Arial,sans-serif; font-size: 18px; line-height:30px;">@question</th>
+                                <th scope="col" align="left" style="padding:10px; font-family: Arial,sans-serif; font-size: 18px; line-height:30px;">@answer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr bgcolor="#f9f9f9">
+                                <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Договір</p></td>
+                                <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@(TemplateHelper.CheckData(this.ViewData[CardBlockingConstant.AgreementNumber]))</td>
+                            </tr>
+                            <tr>
+                                <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Номер картки</p></td>
+                                <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@(TemplateHelper.CheckData(this.ViewData[CardBlockingConstant.MaskedCardNumber]))</td>
+                            </tr>
+                            <tr bgcolor="#f9f9f9">
+                                <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Причина блокування</p></td>
+                                <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@Model.GetCardBlockingReasonType()</td>
+                            </tr>
+                            <tr>
+                                <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Всі операції клієнта</p></td>
+                                <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@(Convert.ToBoolean(Model.Reason.ClientTransactions.AllTransaction) ? "Так" : "Ні")</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            @if (Model.Reason.ClientTransactions.Transactions != null && Model.Reason.ClientTransactions.AllTransaction == false)
+            {
+                <tr bgcolor="#f9f9f9">
+                    <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored caption">Операції, що клієнт не здійснював:</p></td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="transactions" width="100%" cellpadding="0" cellspacing="0" style="min-width:100%;">
+                            <thead>
+                                <tr>
+                                    <th scope="col" align="left" style="padding:10px; font-family: Arial,sans-serif; font-size: 16px; line-height:28px;">Дата та час</th>
+                                    <th scope="col" align="left" style="padding:10px; font-family: Arial,sans-serif; font-size: 16px; line-height:28px;">Точка</th>
+                                    <th scope="col" align="left" style="padding:10px; font-family: Arial,sans-serif; font-size: 16px; line-height:28px;">Операція</th>
+                                    <th scope="col" align="left" style="padding:10px; font-family: Arial,sans-serif; font-size: 16px; line-height:28px;">Сума</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 0; i < Model.Reason.ClientTransactions.Transactions.Count; i++)
+                                {
+                                    var transaction = Model.Reason.ClientTransactions.Transactions[i];
+
+                                <tr bgcolor="@((i % 2) != 0 ? "" : "#f9f9f9")">
+                                    <td data-label="Дата та час" valign="top" style="padding:10px 10px 10px 10px; font-family: Arial,sans-serif; font-size: 14px; line-height:20px;">@(TemplateHelper.CheckData(transaction.OperationDate))</td>
+                                    <td data-label="Точка" valign="top" style="padding:10px 10px 10px 10px; font-family: Arial,sans-serif; font-size: 14px; line-height:20px;">@(TemplateHelper.CheckData(transaction.MerchantName))</td>
+                                    <td data-label="Операція" valign="top" style="padding:10px 10px 10px 10px; font-family: Arial,sans-serif; font-size: 14px; line-height:20px;">@(TemplateHelper.CheckData(transaction.OperationDetails))</td>
+                                    <td data-label="Сума" valign="top" style="padding:10px 10px 10px 10px; font-family: Arial,sans-serif; font-size: 14px; line-height:20px;">@transaction.Amount <small>@transaction.Currency.ToUpper()</small></td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            }
+        </table>
+    </td>
+</tr>

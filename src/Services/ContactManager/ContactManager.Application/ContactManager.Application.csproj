@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Vostok.HotLineAssistant.ContactManager.Application</RootNamespace>
+    <AssemblyName>HotLineAssistantContactManager.Application</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ClientBalances\**" />
+    <EmbeddedResource Remove="ClientBalances\**" />
+    <None Remove="ClientBalances\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="9.2.2" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\HotLineAssistant.Application\Application.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\HotLineAssistant.Common\Common.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\HotLineAssistant.Domain\Domain.csproj" />
+    <ProjectReference Include="..\ContactManager.Domain\ContactManager.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Vostok.Hotline.Data.Repository.References</RootNamespace>
+    <AssemblyName>Hotline.Data.Repository.References</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Api\Api.References\Api.References.csproj" />
+    <ProjectReference Include="..\Data.EF\Data.EF.csproj" />
+    <ProjectReference Include="..\Data.Repository\Data.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
+
+
+

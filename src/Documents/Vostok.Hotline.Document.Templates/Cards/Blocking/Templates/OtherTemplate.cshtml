@@ -1,0 +1,47 @@
+﻿@{
+    string question = "Запит";
+    string answer = "Відповідь";
+}
+
+@model Vostok.Hotline.Document.Templates.Cards.Blocking.Models.CardBlockingModel<Vostok.Hotline.Document.Templates.Cards.Blocking.Models.OtherModel>
+@using Vostok.Hotline.Core.Documents.Helpers;
+@using Vostok.Hotline.Document.Templates.Cards.Blocking.ConstantNames;
+
+<tr style="border-collapse:collapse">
+    <td>
+        <table width="100%" cellpadding="0" cellspacing="0" style="min-width:100%;">
+            <thead>
+                <tr>
+                    <th scope="col" align="left" style="padding:10px; font-family: Arial,sans-serif; font-size: 18px; line-height:30px;">@question</th>
+                    <th scope="col" align="left" style="padding:10px; font-family: Arial,sans-serif; font-size: 18px; line-height:30px;">@answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr bgcolor="#f9f9f9">
+                    <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Договір</p></td>
+                    <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@(TemplateHelper.CheckData(this.ViewData[CardBlockingConstant.AgreementNumber]))</td>
+                </tr>
+                <tr>
+                    <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Номер картки</p></td>
+                    <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@(TemplateHelper.CheckData(this.ViewData[CardBlockingConstant.MaskedCardNumber]))</td>
+                </tr>
+                <tr bgcolor="#f9f9f9">
+                    <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Статус</p></td>
+                    <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">blocked + scammer</td>
+                </tr>
+                <tr>
+                    <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Дата і час зміни статусу</p></td>
+                    <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@(TemplateHelper.CheckData(Model.ModifyDate))</td>
+                </tr>
+                <tr bgcolor="#f9f9f9">
+                    <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Логін</p></td>
+                    <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@(TemplateHelper.CheckData(Model.UserLogin))</td>
+                </tr>
+                <tr>
+                    <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Коментар</p></td>
+                    <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@(TemplateHelper.CheckData(Model.ReasonComment))</td>
+                </tr>
+            </tbody>
+        </table>
+    </td>
+</tr>

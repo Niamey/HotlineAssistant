@@ -1,0 +1,7 @@
+﻿@using Vostok.Hotline.Document.Templates.Cards.Blocking.ConstantNames;
+@{
+    if (ViewData.ContainsKey(CardBlockingConstant.ForOperator))
+        Layout = "~/Shared/Templates/_LayoutOperator.cshtml";
+    else
+        Layout = "~/Shared/Templates/_Layout.cshtml";
+}

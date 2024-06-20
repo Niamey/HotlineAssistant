@@ -1,0 +1,15 @@
+{
+  "extends": "@quasar/app/tsconfig-preset",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "experimentalDecorators": true,
+    "paths": {
+      "@": [
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "src"
+, "src/workplace/store/modules/.module.ts"  ]
+}

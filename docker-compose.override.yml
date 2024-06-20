@@ -1,0 +1,84 @@
+version: '3.4'
+
+services:
+#  sql-data:
+#    environment:
+#      - SA_PASSWORD=<Strong!Passw0rd>
+#      - ACCEPT_EULA=Y
+#    ports:
+#      - "5433:1433"
+
+#  rabbitmq:
+#    ports:
+#      - "15672:15672"
+#      - "5672:5672"
+
+
+  gateway-client-webapi:
+    environment:
+      - HOTLINE_ENVIRONMENT=Development
+      - ConnectionStrings_HotlineContext=${ConnectionStrings_HotlineContext}
+      - ConnectionStrings_HotlineContext_Password=${ConnectionStrings_HotlineContext_Password}
+      - ConnectionStrings_HotlineContext_Solar=${ConnectionStrings_HotlineContext_Solar}
+      - ConnectionStrings_HotlineContext_Solar_Password=${ConnectionStrings_HotlineContext_Solar_Password}
+      - ConnectionStrings_HotlineContext_References=${ConnectionStrings_HotlineContext_References}
+      - ConnectionStrings_HotlineContext_References_Password=${ConnectionStrings_HotlineContext_References_Password}
+      - ASPNETCORE_URLS=http://+80
+      - Authorization_JWT_Key=${Authorization_JWT_Key}
+      - Logger_Database_ConnectionString=${Logger_Database_ConnectionString}
+      - Logger_Database_ConnectionString_Password=${Logger_Database_ConnectionString_Password}
+      - Logger_Database_Level=Trace
+      - Logger_RabbitMq_Disable=true
+      - Logger_Email_Disable=true
+      - RetailSystemInformationConfig__KeyCloakUrl=${RetailSystemInformationConfig__KeyCloakUrl}
+      - RetailSystemInformationConfig__UserName=${RetailSystemInformationConfig__UserName}
+      - RetailSystemInformationConfig__Password=${RetailSystemInformationConfig__Password}
+      - RetailSystemInformationConfig__System=${RetailSystemInformationConfig__System}
+      - RetailSystemInformationConfig__Service=${RetailSystemInformationConfig__Service}
+      - RetailSystemInformationConfig__ServiceSecret=${RetailSystemInformationConfig__ServiceSecret}
+
+      - RetailSystemManagementConfig__KeyCloakUrl=${RetailSystemManagementConfig__KeyCloakUrl}
+      - RetailSystemManagementConfig__UserName=${RetailSystemManagementConfig__UserName}
+      - RetailSystemManagementConfig__Password=${RetailSystemManagementConfig__Password}
+      - RetailSystemManagementConfig__System=${RetailSystemManagementConfig__System}
+      - RetailSystemManagementConfig__Service=${RetailSystemManagementConfig__Service}
+      - RetailSystemManagementConfig__ServiceSecret=${RetailSystemManagementConfig__ServiceSecret}
+      
+      - RetailSystemCardShirtConfig__KeyCloakUrl=${RetailSystemCardShirtConfig__KeyCloakUrl}
+      - RetailSystemCardShirtConfig__UserName=${RetailSystemCardShirtConfig__UserName}
+      - RetailSystemCardShirtConfig__Password=${RetailSystemCardShirtConfig__Password}
+      - RetailSystemCardShirtConfig__System=${RetailSystemCardShirtConfig__System}
+      - RetailSystemCardShirtConfig__Service=${RetailSystemCardShirtConfig__Service}
+      - RetailSystemCardShirtConfig__ServiceSecret=${RetailSystemCardShirtConfig__ServiceSecret}
+    ports:
+      - "5901:80"
+
+  storefront-webapi:
+    environment:
+      - HOTLINE_ENVIRONMENT=Development
+      - ConnectionStrings_HotlineContext=${ConnectionStrings_HotlineContext}
+      - ConnectionStrings_HotlineContext_Password=${ConnectionStrings_HotlineContext_Password}
+      - ASPNETCORE_URLS=http://+80
+      - Authorization_JWT_Key=${Authorization_JWT_Key}
+      - Logger_Database_ConnectionString=${Logger_Database_ConnectionString}
+      - Logger_Database_ConnectionString_Password=${Logger_Database_ConnectionString_Password}
+      - Logger_Database_Level=Trace
+      - Logger_RabbitMq_Disable=true
+      - Logger_Email_Disable=true
+    ports:
+      - "5902:80"
+
+  gateway-vicidial-webapi:
+    environment:
+      - HOTLINE_ENVIRONMENT=Development
+      - ConnectionStrings_HotlineContext=${ConnectionStrings_HotlineContext}
+      - ConnectionStrings_HotlineContext_Password=${ConnectionStrings_HotlineContext_Password}
+      - ASPNETCORE_URLS=http://+80
+      - Authorization_JWT_Key=${Authorization_JWT_Key}
+      - Logger_Database_ConnectionString=${Logger_Database_ConnectionString}
+      - Logger_Database_ConnectionString_Password=${Logger_Database_ConnectionString_Password}
+      - Logger_Database_Level=Trace
+      - Logger_RabbitMq_Disable=true
+      - Logger_Email_Disable=true
+    ports:
+      - "5903:80"

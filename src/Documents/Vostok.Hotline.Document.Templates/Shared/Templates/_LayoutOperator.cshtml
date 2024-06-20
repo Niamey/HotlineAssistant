@@ -1,0 +1,39 @@
+﻿<style>
+    th:first-child:nth-last-child(2),
+    th:first-child:nth-last-child(2) ~ th {
+        display: none;
+    }
+    th {
+        font-weight: 600;
+        font-size: 14px !important;
+        line-height: 20px !important;
+        color: #26272B;
+    }
+    tr {
+        background-color: #ffffff;
+    }
+    td:first-child:nth-last-child(2),
+    td:first-child:nth-last-child(2) ~ td {
+        padding: 0 !important;
+        font-size: 14px !important;
+        line-height: 20px !important;
+    }
+    p.colored {
+        font-size: 14px;
+        line-height: 20px;
+        color: #7D7D80;
+    }
+        p.colored.caption {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #26272B;
+        }
+    table.transactions tbody td {
+        border-top: 1px solid #E9E9EA;
+    }
+    
+</style>
+
+
+@RenderBody()

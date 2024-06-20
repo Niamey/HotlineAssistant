@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "Data.EF": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ConnectionStrings.HotlineContext": "Server=SBDP-CENTER-I08.BANK.LAN;Database=HotlineAssistant;User ID=j-hotlineassistan;",
+        "ConnectionStrings.HotlineContext.Password": "H57M1MfaiOTonOxz7EwG",
+        "ConnectionStrings.HotlineContext.Solar": "Server=SBDP-CENTER-I08.BANK.LAN;Database=HotlineAssistant;User ID=j-hotlineassistan;",
+        "ConnectionStrings.HotlineContext.Solar.Password": "H57M1MfaiOTonOxz7EwG",
+        "ConnectionStrings.HotlineContext.References": "Server=SBDP-CENTER-I08.BANK.LAN;Database=HotlineAssistant;User ID=j-hotlineassistan;",
+        "ConnectionStrings.HotlineContext.References.Password": "H57M1MfaiOTonOxz7EwG"
+      }
+    }
+  }
+}

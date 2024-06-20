@@ -1,0 +1,49 @@
+.visual-table th, .visual-table td.q-td
+  border-bottom-width: 0!important
+  font-size: 14px
+  line-height: 20px
+  padding: 7px 10px
+
+.visual-table th:first-of-type, .visual-table td.q-td:first-of-type
+  padding: 7px 10px 7px 24px
+.visual-table th:last-of-type, .visual-table td.q-td:last-of-type
+  padding: 7px 24px 7px 10px
+
+.visual-table .q-tr:after
+  content: " "
+  height: 1px
+  background-color: #E9E9EA
+  position: absolute
+  left: 0
+  right: 0
+  margin: 0 24px 0 24px
+
+.visual-table .q-tr.selected:after,
+.visual-table .q-tr.selected:hover:after
+  background-color: #f0f0f0
+
+.visual-table .q-tr:hover:after
+  background-color: #f7f7f7
+
+.visual-table .q-tr:hover+.q-tr:after
+  display: none
+
+@media (min-width: 1919px)
+  .visual-table th, .visual-table td.q-td
+    font-size: 16px
+    line-height: 24px
+    padding: 7px 24px
+
+.visual-table .q-table__bottom
+  border-top: none
+  position: relative
+
+.visual-table .q-table__bottom:before
+  content: " "
+  height: 1px
+  background-color: #E9E9EA
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  margin: 0 24px 0 24px

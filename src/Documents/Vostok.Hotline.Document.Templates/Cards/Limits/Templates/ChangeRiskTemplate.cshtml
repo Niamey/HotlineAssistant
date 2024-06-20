@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Shared/Templates/_Layout.cshtml";
+    string question = "Запит";
+    string answer = "Відповідь";
+}
+
+@model Vostok.Hotline.Document.Templates.Cards.Limits.Models.ChangeRiskModel
+
+    <style>
+        .colored {
+            color: #7D7D80;
+        }
+    </style>
+
+    <tr style="border-collapse:collapse">
+        <td align="center" class="es-m-p20tb" style="padding:20px;Margin:0">
+            <!-- Пример блока с текстом -->
+            <table bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" width="100%">
+                <tr style="border-collapse:collapse">
+                    <td>
+                        <table width="100%" cellpadding="0" cellspacing="0" style="min-width:100%;">
+                            <thead>
+                                <tr>
+                                    <th scope="col" align="left" style="padding:10px; font-family: Arial,sans-serif; font-size: 18px; line-height:30px;">@question</th>
+                                    <th scope="col" align="left" style="padding:10px; font-family: Arial,sans-serif; font-size: 18px; line-height:30px;">@answer</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr bgcolor="#f9f9f9">
+                                    <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Договір клієнта</p></td>
+                                    <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@Model.AgreementNumber</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Номер картки</p></td>
+                                    <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@Model.CardNumber</td>
+                                </tr>
+                                <tr bgcolor="#f9f9f9">
+                                    <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Ліміт на зняття готівки в ризиковіх країнах</p></td>
+                                    <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@Model.Limit.ToString("F") <small>грн</small></td>
+                                </tr>
+                                @if (Model.IsP2PLimited)
+                                {
+                                    <tr>
+                                        <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Ліміт на переказ p2p в ризиковіх країнах</p></td>
+                                        <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@Model.Limit.ToString("F") <small>грн</small></td>
+                                    </tr>
+                                    <tr bgcolor="#f9f9f9">
+                                        <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Контактний номер</p></td>
+                                        <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@(!String.IsNullOrEmpty(Model.Phone) ? Model.Phone : "Не вказано")</td>
+                                    </tr>
+                                }
+                                else
+                                { 
+                                    <tr>
+                                        <td data-label="@question" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;"><p class="colored">Контактний номер телефону</p></td>
+                                        <td data-label="@answer" valign="top" style="padding:20px 10px 20px 10px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">@(!String.IsNullOrEmpty(Model.Phone) ? Model.Phone : "Не вказано")</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>

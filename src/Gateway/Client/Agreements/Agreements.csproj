@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<AssemblyName>Hotline.Gateway.Client.Agreements</AssemblyName>
+		<RootNamespace>Vostok.Hotline.Gateway.Client.Agreements</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="10.1.1" />
+		<PackageReference Include="FluentValidation" Version="9.3.0" />
+		<PackageReference Include="MediatR" Version="9.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\Api\Api.CRM\Api.CRM.csproj" />
+	  <ProjectReference Include="..\..\..\Api\Api.References\Api.References.csproj" />
+	  <ProjectReference Include="..\..\..\Api\Api.Retail\Api.Retail.csproj" />
+	  <ProjectReference Include="..\..\..\Api\Api.Services\Api.Services.csproj" />
+	  <ProjectReference Include="..\..\..\Core\Core.Common\Core.Common.csproj" />
+	  <ProjectReference Include="..\..\..\Core\Core.Documents\Core.Documents.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Services\SearchRequests\" />
+	</ItemGroup>
+
+
+</Project>

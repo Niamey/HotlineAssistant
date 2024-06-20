@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Vostok.HotLineAssistant.ContactManager.Infrastructure</RootNamespace>
+    <AssemblyName>HotLineAssistant.ContactManager.Infrastructure</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="QueryHandlers\ClientBalances\**" />
+    <EmbeddedResource Remove="QueryHandlers\ClientBalances\**" />
+    <None Remove="QueryHandlers\ClientBalances\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\HotLineAssistant.Common\Common.csproj" />
+    <ProjectReference Include="..\ContactManager.Application\ContactManager.Application.csproj" />
+    <ProjectReference Include="..\ContactManager.Domain\ContactManager.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
